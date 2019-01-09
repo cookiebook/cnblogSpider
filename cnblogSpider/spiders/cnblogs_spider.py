@@ -26,7 +26,7 @@ class CnblogsSpider(scrapy.Spider):
             item = CnblogspiderItem(url=url, title=title, time=time, content=content)
             request = scrapy.Request(url=url, callback=self.parse_body)
             request.meta['item'] = item  # 将item暂存
-            print "hhhhh"
+            print "hhhh"
             yield request
         next_page = Selector(response).re(u'<a href="(\S*)">下一页</a>')
         if next_page:
